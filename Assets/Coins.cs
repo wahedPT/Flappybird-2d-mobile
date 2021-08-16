@@ -17,12 +17,17 @@ public class Coins : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      //  CoinS();
+        //  CoinS();
+        if (GameManager.gameOver == true)
+        {
+            CancelInvoke("CoinS");
+        }
     }
 
     private void CoinS()
     {
-        randY = Random.Range(minY, maxY);
+        
+            randY = Random.Range(minY, maxY);
         GameObject CoinRef = Instantiate(Coin);
         CoinRef.transform.position = new Vector2(transform.position.x, randY);
     }

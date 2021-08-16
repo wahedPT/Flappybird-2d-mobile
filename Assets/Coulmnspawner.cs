@@ -19,12 +19,16 @@ public class Coulmnspawner : MonoBehaviour
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= maxTime)
+        if(GameManager.gameOver==false)
         {
-            cSpawn();
-            timer = 0;
+            timer += Time.deltaTime;
+            if (timer >= maxTime)
+            {
+                cSpawn();
+                timer = 0;
+            }
         }
+        
     }
     void cSpawn()
     {
